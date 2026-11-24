@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kemi – plugga inför provet</title>
+<style>
+:root{--bg:#0a1220;--panel:#121f33;--tile:#1b2d48;--line:#304663;--txt:#f1f6ff;--muted:#b2c1d5;--mint:#6ce0c6;--blue:#91b2ff;--green:#8ce2a8;--red:#ff9b9b;--yellow:#f4d27b}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(145deg,#09111e,#10213a);color:var(--txt);font:16px/1.65 system-ui,Arial,sans-serif}
+header{text-align:center;padding:42px 18px 30px;background:radial-gradient(ellipse at top,#244c70,transparent 70%)}
+header h1{font-size:clamp(2rem,6vw,3.3rem);line-height:1.15;margin:10px 0}header p{color:var(--muted);margin:0}
+main{max-width:1100px;margin:auto;padding:18px}.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 20px}
+button{border:1px solid var(--line);background:var(--tile);color:var(--txt);padding:10px 15px;border-radius:11px;cursor:pointer;font-weight:700}button:hover,button.active{background:var(--mint);color:#08212a}
+.page.hidden{display:none}.card{background:var(--panel);border:1px solid #263c59;border-radius:18px;padding:22px;margin:14px 0;box-shadow:0 10px 30px #0002}
+h2{color:var(--mint);margin:0 0 12px}h3{color:#c8d9ff;margin:18px 0 5px}.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.tile{background:var(--tile);padding:14px;border-radius:13px;border:1px solid #2b4261}.tag{display:inline-block;border-radius:99px;background:#204452;color:#aaf3e4;padding:3px 10px;font-size:.83rem}
+.callout{border-left:4px solid var(--mint);background:#183044;padding:12px 15px;border-radius:8px;margin:14px 0}
+.diagram{background:#0d192a;border:1px solid var(--line);padding:18px;border-radius:14px;text-align:center;overflow:auto}
+.shell{display:inline-flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap}.nucleus{border:3px solid #f4bd70;border-radius:50%;width:112px;height:112px;display:grid;place-content:center;background:#483a35;font-weight:800}.orbit{border:2px dashed #8ca8d1;border-radius:50%;padding:12px;color:#cfe0ff}
+.periodic-wrap{overflow-x:auto;padding-bottom:8px}.periodic{display:grid;grid-template-columns:repeat(18,minmax(43px,1fr));gap:4px;min-width:850px}
+.el{min-height:64px;border:1px solid #526781;border-radius:7px;padding:4px;text-align:center;background:#22344e;font-size:11px;line-height:1.2}
+.el b{display:block;font-size:17px}.el small{display:block;color:#d2deee;font-size:9px}.alkali{background:#694a31}.halogen{background:#315d72}.noble{background:#57477b}.metalloid{background:#42624f}.other{background:#34465d}.empty{visibility:hidden}
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.legend span{padding:5px 9px;border-radius:7px;font-size:12px}
+table{border-collapse:collapse;width:100%;margin:12px 0}td,th{border:1px solid var(--line);padding:9px;text-align:left}th{background:#203b53}
+.quiz-q{background:var(--tile);border:1px solid var(--line);padding:16px;border-radius:14px;margin:14px 0}.quiz-q.correct{border:2px solid var(--green)}.quiz-q.wrong{border:2px solid var(--red)}
+.quiz-q label{display:block;margin:7px 0;cursor:pointer}.feedback{margin-top:10px;padding:10px;border-radius:9px;background:#122238}.good{color:var(--green)}.bad{color:var(--red)}
+input[type=radio]{accent-color:var(--mint);margin-right:7px}.score{font-size:1.2rem;font-weight:800}.small{font-size:.9rem;color:var(--muted)}
+footer{text-align:center;padding:25px;color:var(--muted)}
+@media(max-width:600px){main{padding:12px}.card{padding:16px}.tabs button{font-size:13px;padding:9px 10px}}
+</style></head>
+<body>
+<header><span class="tag">Kemi • högstadiet</span><h1>Plugga inför kemiprovet</h1><p>Förklaringar, bilder, periodiska systemet och ett quiz som visar exakt vad du behöver öva på.</p></header>
+<main>
+<nav class="tabs">
+<button class="active" data-page="start">Start</button><button data-page="atom">Atomer & isotoper</button><button data-page="period">Periodiska systemet</button><button data-page="joner">Joner & bindningar</button><button data-page="quiz">Provträning</button>
+</nav>
+<div id="start" class="page">
+<section class="card"><h2>Så använder du sidan</h2><div class="grid">
+<div class="tile"><b>1. Läs</b><br>Gå igenom förklaringarna och bilderna i varje del.</div><div class="tile"><b>2. Förklara själv</b><br>Försök säga vad orden betyder utan att titta.</div><div class="tile"><b>3. Testa dig</b><br>Gör provträningen. Du får rätt/fel och en förklaring på varje fråga.</div></div></section>
+<section class="card"><h2>Det här måste du kunna</h2>
+<ul><li>Atomens delar, laddningar och var partiklarna finns.</li><li>Rita en atom med protoner, neutroner och elektroner i skal.</li><li>Förklara isotoper och ge exempel på hur de används.</li><li>Förstå perioder, grupper och grundämnesfamiljer.</li><li>Förklara hur joner bildas och räkna ut laddning.</li><li>Skilja mellan jonbindning, molekylbindning och metallbindning.</li></ul></section>
+</div>
+<div id="atom" class="page hidden">
+<section class="card"><h2>1. Atomens byggnad</h2><div class="grid">
+<div class="tile"><h3>Proton (+)</h3>Positiv laddning. Finns i atomkärnan.</div><div class="tile"><h3>Neutron (0)</h3>Ingen laddning. Finns i atomkärnan.</div><div class="tile"><h3>Elektron (−)</h3>Negativ laddning. Finns i elektronskalen runt kärnan.</div></div>
+<div class="diagram"><div class="shell"><div class="nucleus">KÄRNA<br>protoner +<br>neutroner 0</div><div class="orbit">Elektronskal<br>elektroner −</div></div><p class="small">Förenklad bild: kärnan i mitten och elektroner i skal runt den.</p></div>
+<div class="callout"><b>Viktigt:</b> Atomnummer = antal protoner. En neutral atom har lika många protoner som elektroner.</div>
+<h3>Så ritar du en atom</h3><p>Exempel: kisel har atomnummer 14. Därför har kisel 14 protoner. En neutral kiselatom har också 14 elektroner. Kisel-28 har 14 neutroner.</p>
+<div class="grid"><div class="tile"><b>Kärnan</b><br>14 protoner<br>14 neutroner</div><div class="tile"><b>Elektronskal</b><br>Första skalet: 2<br>Andra skalet: 8<br>Tredje skalet: 4<br><b>Fördelning: 2–8–4</b></div></div>
+<h3>Valenselektroner och fullt valensskal</h3><p>Valenselektroner är elektronerna i det yttersta skalet. Ett fullt valensskal är när yttersta skalet är fullt. Atomer reagerar ofta för att få ett fullt yttersta skal.</p></section>
+<section class="card"><h2>2. Isotoper</h2><p>Isotoper är varianter av samma grundämne. De har <b>samma antal protoner</b> men <b>olika antal neutroner</b>.</p><div class="grid"><div class="tile"><b>Kol-12</b><br>6 protoner + 6 neutroner</div><div class="tile"><b>Kol-14</b><br>6 protoner + 8 neutroner</div></div><p>Båda är kol eftersom båda har 6 protoner. De skiljer sig åt genom antalet neutroner.</p><h3>Vad används isotoper till?</h3><ul><li><b>Sjukvård:</b> vissa radioaktiva isotoper används vid undersökningar och behandlingar.</li><li><b>Åldersbestämning:</b> kol-14 kan användas för att uppskatta åldern på gammalt material från levande organismer.</li></ul></section>
+</div>
+<div id="period" class="page hidden">
+<section class="card"><h2>3. Periodiska systemet</h2><p>Periodiska systemet är en karta över alla grundämnen. De står i ordning efter atomnummer, alltså antal protoner.</p>
+<div class="grid"><div class="tile"><h3>Period = vågrät rad</h3>Visar hur många elektronskal atomerna har.</div><div class="tile"><h3>Grupp = lodrät kolumn</h3>Ämnen i samma grupp har ofta liknande egenskaper. För huvudgrupperna hänger gruppen ihop med antalet valenselektroner.</div></div>
+<h3>Så ser periodiska systemet ut</h3><p class="small">Tryck på ett grundämne i tabellen för att läsa mer. Färgerna markerar några viktiga ämnesfamiljer.</p>
+<div class="legend"><span class="alkali">Alkalimetaller</span><span class="halogen">Halogener</span><span class="noble">Ädelgaser</span><span class="metalloid">Halvmetaller</span></div>
+<div class="periodic-wrap"><div class="periodic" id="periodic"></div></div>
+<div id="element-info" class="callout">Välj ett grundämne i tabellen för information.</div>
+<h3>Tre viktiga grupper</h3><div class="grid">
+<div class="tile"><h3>Grupp 1 – alkalimetaller</h3>Mjuka metaller som reagerar lätt. De har en valenselektron. Natrium ingår i vanligt koksalt tillsammans med klor.</div>
+<div class="tile"><h3>Grupp 17 – halogener</h3>Reaktiva icke-metaller med sju valenselektroner. Klor används för att desinficera poolvatten. Fluor finns i ämnen som används för att skydda tänderna.</div>
+<div class="tile"><h3>Grupp 18 – ädelgaser</h3>Har fullt yttersta elektronskal och reagerar därför mycket sällan. Argon används bland annat som skyddsgas.</div></div>
+<h3>Varför är periodiska systemet bra?</h3><ul><li>Du kan se atomnumret och därmed antalet protoner.</li><li>Du kan jämföra ämnen och hitta ämnen som liknar varandra.</li><li>Du kan använda grupp och period för att förstå elektronskal och valenselektroner.</li><li>Du kan förutsäga en del av ämnenas egenskaper och hur de reagerar.</li></ul></section>
+</div>
+<div id="joner" class="page hidden">
+<section class="card"><h2>4. Joner</h2><p>En jon är en atom eller atomgrupp som har elektrisk laddning eftersom antalet protoner och elektroner inte är lika.</p><div class="grid"><div class="tile"><h3>Positiv jon (+)</h3>Atomen <b>lämnar bort elektroner</b>. Då blir det fler protoner än elektroner. Exempel: Na⁺.</div><div class="tile"><h3>Negativ jon (−)</h3>Atomen <b>tar upp elektroner</b>. Då blir det fler elektroner än protoner. Exempel: Cl⁻.</div></div>
+<h3>Räkna ut jonens laddning</h3><p>Laddning = antal protoner minus antal elektroner.</p><div class="callout">Exempel: 11 protoner och 10 elektroner → 11 − 10 = <b>+1</b>.<br>Exempel: 17 protoner och 18 elektroner → 17 − 18 = <b>−1</b>.</div>
+<h3>Ädelgasstruktur</h3><p>Atomer bildar ofta joner eller binder till andra atomer för att få fullt valensskal. Det gör dem stabilare. Därför finns många ämnen i naturen som kemiska föreningar i stället för som ensamma atomer.</p></section>
+<section class="card"><h2>5. Tre kemiska bindningar</h2>
+<h3>Jonbindning</h3><p>Elektroner flyttas från en atom till en annan. Då bildas positiva och negativa joner som dras till varandra. Exempel: natriumklorid (NaCl), vanligt salt.</p>
+<div class="diagram">Natrium lämnar en elektron → Na⁺<br>Klor tar upp elektronen → Cl⁻<br><b>Na⁺ och Cl⁻ dras till varandra.</b></div>
+<h3>Molekylbindning</h3><p>Två eller flera atomer delar på elektronpar. Exempel: vatten, H₂O. Syreatomen delar elektronpar med två väteatomer.</p><div class="diagram"><div style="font-size:2rem;font-weight:800">H — O — H</div><p class="small">Förenklad modell av vattenmolekylen. Strecken visar bindningar där atomerna delar elektroner.</p></div>
+<h3>Metallbindning</h3><p>Metallatomer hålls ihop av gemensamma, rörliga valenselektroner som delas av många atomer. Det hjälper till att förklara varför metaller leder elektricitet och värme.</p></section>
+</div>
+<div id="quiz" class="page hidden">
+<section class="card"><h2>Provträning – 15 frågor</h2><p>Välj ett svar på varje fråga och tryck på <b>Rätta provet</b>. Efteråt markeras varje fråga grön eller röd. Du får se rätt svar och en förklaring till det du missade.</p>
+<form id="quizform">
+<div id="questions"></div><button type="submit">Rätta provet</button> <button type="button" id="retry">Försök igen</button>
+<div id="score" class="callout" aria-live="polite">Ditt resultat visas här när du rättar provet.</div></form></section>
+</div>
+<footer>Du klarar det här – öva lite i taget! ⚛️</footer>
+</main>
+<script>
+const tabs=document.querySelectorAll('.tabs button'),pages=document.querySelectorAll('.page');
+tabs.forEach(t=>t.addEventListener('click',()=>{tabs.forEach(b=>b.classList.remove('active'));t.classList.add('active');pages.forEach(p=>p.classList.toggle('hidden',p.id!==t.dataset.page));window.scrollTo({top:0,behavior:'smooth'})}));
+const els=[
+['H','Väte',1,1,1,1],['He','Helium',2,1,18,2],
+['Li','Litium',3,2,1,1],['Be','Beryllium',4,2,2,2],['B','Bor',5,2,13,3],['C','Kol',6,2,14,4],['N','Kväve',7,2,15,5],['O','Syre',8,2,16,6],['F','Fluor',9,2,17,7],['Ne','Neon',10,2,18,8],
+['Na','Natrium',11,3,1,1],['Mg','Magnesium',12,3,2,2],['Al','Aluminium',13,3,13,3],['Si','Kisel',14,3,14,4],['P','Fosfor',15,3,15,5],['S','Svavel',16,3,16,6],['Cl','Klor',17,3,17,7],['Ar','Argon',18,3,18,8],
+['K','Kalium',19,4,1,1],['Ca','Kalcium',20,4,2,2],['Fe','Järn',26,4,8,2],['Cu','Koppar',29,4,11,1],['Zn','Zink',30,4,12,2],['Br','Brom',35,4,17,7],['Kr','Krypton',36,4,18,8],
+['Ag','Silver',47,5,11,1],['I','Jod',53,5,17,7],['Xe','Xenon',54,5,18,8],['Au','Guld',79,6,11,1],['Hg','Kvicksilver',80,6,12,2],['Rn','Radon',86,6,18,8]
+];
+const periodic=document.getElementById('periodic');
+els.forEach(e=>{let [s,n,z,p,g,v]=e;let d=document.createElement('button');d.className='el '+(g===1?'alkali':g===17?'halogen':g===18?'noble':s==='B'||s==='Si'?'metalloid':'other');d.style.gridColumn=g;d.style.gridRow=p;d.innerHTML=`<small>${z}</small><b>${s}</b><small>${n}</small>`;d.title=n;d.addEventListener('click',()=>{document.getElementById('element-info').innerHTML=`<b>${n} (${s})</b> – atomnummer ${z}. Det betyder ${z} protoner. Grundämnet står i period ${p}, grupp ${g}.`+(v?` I den förenklade huvudgruppsmodellen har det ${v} valenselektroner.`:'')});periodic.appendChild(d)});
+const qs=[
+['Vad har en proton för laddning?',['Negativ','Positiv','Ingen laddning'],1,'En proton är positivt laddad (+) och finns i atomkärnan.'],
+['Var finns elektronerna i en enkel atommodell?',['I atomkärnan','I elektronskalen runt kärnan','Bara mellan protonerna'],1,'Elektronerna finns i elektronskal runt atomkärnan.'],
+['Vad visar atomnumret?',['Antalet protoner','Antalet neutroner','Antalet elektronskal'],0,'Atomnumret är alltid lika med antalet protoner.'],
+['En neutral atom har 8 protoner. Hur många elektroner har den?',['6','8','10'],1,'En neutral atom har lika många protoner som elektroner. Därför har den 8 elektroner.'],
+['Vad är isotoper av samma grundämne?',['Olika antal protoner','Samma protonantal men olika neutronantal','Samma neutronantal men olika protonantal'],1,'Isotoper har samma antal protoner men olika antal neutroner.'],
+['Kisel har atomnummer 14. Hur många protoner har kisel?',['7','14','28'],1,'Atomnumret 14 betyder att kisel har 14 protoner.'],
+['En vanlig kisel-28-atom har 14 protoner. Hur många neutroner har den?',['14','28','42'],0,'Masstalet 28 är protoner + neutroner. 28 − 14 = 14 neutroner.'],
+['Vad visar en period i periodiska systemet?',['Antalet elektronskal','Antalet neutroner','Atomens laddning'],0,'En period är en vågrät rad och visar antalet elektronskal.'],
+['Vad kallas en lodrät kolumn i periodiska systemet?',['Period','Grupp','Isotop'],1,'En lodrät kolumn kallas grupp. Ämnen i samma grupp liknar ofta varandra.'],
+['Vilken grupp innehåller ädelgaserna?',['Grupp 1','Grupp 17','Grupp 18'],2,'Ädelgaserna står längst till höger i grupp 18. De har fullt yttersta elektronskal.'],
+['Vad händer när en atom blir en positiv jon?',['Den tar upp elektroner','Den lämnar bort elektroner','Den får fler protoner'],1,'När atomen lämnar bort negativa elektroner blir den positiv.'],
+['En jon har 12 protoner och 10 elektroner. Vilken laddning har den?',['+2','−2','+1'],0,'12 − 10 = +2. Det finns två fler protoner än elektroner.'],
+['Vad händer vid en molekylbindning?',['Atomer delar elektronpar','Atomer byter protoner','Metaller delar atomkärnor'],0,'Vid molekylbindning delar atomer på elektronpar, till exempel i vatten H₂O.'],
+['Vilken bindning finns mellan positiva och negativa joner i vanligt salt?',['Metallbindning','Jonbindning','Molekylbindning'],1,'Natriumklorid består av Na⁺ och Cl⁻ som dras till varandra med jonbindning.'],
+['Vad är speciellt med metallbindning?',['Metallatomer delar gemensamma rörliga valenselektroner','Alla elektroner sitter fast i kärnan','Atomerna delar neutroner'],0,'I metaller delas valenselektroner gemensamt av många atomer och kan röra sig.']
+];
+const qbox=document.getElementById('questions');
+function renderQuiz(){qbox.innerHTML='';qs.forEach((q,i)=>{let d=document.createElement('div');d.className='quiz-q';d.id='q'+i;d.innerHTML=`<b>${i+1}. ${q[0]}</b>`+q[1].map((a,j)=>`<label><input type="radio" name="q${i}" value="${j}"> ${a}</label>`).join('')+`<div class="feedback" id="fb${i}" hidden></div>`;qbox.appendChild(d)})}
+renderQuiz();
+document.getElementById('quizform').addEventListener('submit',e=>{e.preventDefault();let score=0,answered=0;qs.forEach((q,i)=>{let chosen=document.querySelector(`input[name="q${i}"]:checked`),d=document.getElementById('q'+i),fb=document.getElementById('fb'+i);d.classList.remove('correct','wrong');fb.hidden=false;if(chosen)answered++;if(chosen&&Number(chosen.value)===q[2]){score++;d.classList.add('correct');fb.innerHTML=`<span class="good">✓ Rätt!</span> ${q[3]}`}else{d.classList.add('wrong');fb.innerHTML=`<span class="bad">✗ Fel${chosen?' – du valde: '+q[1][Number(chosen.value)]: ' – du svarade inte'}.</span> <b>Rätt svar: ${q[1][q[2]]}.</b> ${q[3]}`}});let pct=Math.round(score/qs.length*100);document.getElementById('score').innerHTML=`<div class="score">Du fick ${score} av ${qs.length} rätt (${pct}%).</div>Du svarade på ${answered} av ${qs.length} frågor. <b>${score>=13?'Riktigt bra!':score>=10?'Bra jobbat! Läs förklaringarna till frågorna du missade.':'Öva vidare! Läs de röda frågorna och prova igen.'}</b>`;document.getElementById('score').scrollIntoView({behavior:'smooth',block:'center'})});
+document.getElementById('retry').addEventListener('click',()=>{document.getElementById('quizform').reset();renderQuiz();document.getElementById('score').textContent='Ditt resultat visas här när du rättar provet.';});
+</script></body></html>
